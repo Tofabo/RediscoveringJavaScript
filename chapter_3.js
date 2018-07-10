@@ -56,3 +56,19 @@ placeOrder(1, 25.20, 10);
 placeOrder(1, 12.05);
 placeOrder(1, 25.30);
 placeOrder(1, 25.20);
+
+const sortByTitle = function(books) {
+    const byTitle = function (book1, book2) {
+        return book1.title.localeCompare(book2.title);
+    }
+
+    // Use spread operator to make a copy of the array.
+    return [...books].sort(byTitle);
+}
+
+const unsortedBooks = [
+    {title: 'zabba'},
+    {title: 'bad'},
+];
+
+console.log(sortByTitle(unsortedBooks));
